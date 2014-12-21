@@ -1,3 +1,8 @@
 language: node_js
 node_js:
   - '0.10'
+os:
+  - osx
+before_install:
+  - brew install libpng
+  - brew install libjpeg
