@@ -1,4 +1,4 @@
-# node-bpg [![Build Status](https://travis-ci.org/thammin/node-bpg.svg)](https://travis-ci.org/thammin/node-bpg)
+# node-bpg
 
 > A nodejs module that generating bpg image files by using libbpg (http://bellard.org/bpg/).
 
