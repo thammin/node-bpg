@@ -26,6 +26,8 @@
   },
   "homepage": "https://github.com/thammin/node-bpg",
   "devDependencies": {
-    "mocha": "^2.0.1"
+    "glob": "^4.3.2",
+    "mocha": "^2.0.1",
+    "neo-async": "^0.3.1"
   }
 }
