@@ -7,6 +7,8 @@
   },
   "main": "index.js",
   "scripts": {
+    "install": "git submodule init && git submodule update",
+    "postinstall": "cd libbpg && make",
     "test": "./node_modules/mocha/bin/mocha test"
   },
   "repository": {
