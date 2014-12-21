@@ -1,6 +1,6 @@
 {
   "name": "node-bpg",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A nodejs wrapper that generating bpg image files by using pre-compiled libbpg (http://bellard.org/bpg/).",
   "engines": {
     "node": ">=0.10.0"
