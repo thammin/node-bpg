@@ -1,6 +1,6 @@
 # node-bpg
 
-> A nodejs module that generating bpg image files by using libbpg (http://bellard.org/bpg/).
+> A nodejs wrapper that generating bpg image files by using pre-compiled libbpg (http://bellard.org/bpg/).
 
 
 ## Install
@@ -15,13 +15,10 @@ npm install --save-dev node-bpg
 ## Example
 
 ```js
-var fs = require('fs');
 var bpg = require('node-bpg');
 
-fs.readFile('./input.jpg', function(err, data) {
+bpg.encode('./input.jpg', function(err) {
   if (err) throw err;
-  
-  fs.writeFile('./output.bpg', bpg.encode(data));
 });
 
 ```
