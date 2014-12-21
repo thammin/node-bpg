@@ -1,0 +1,29 @@
+{
+  "name": "node-bpg",
+  "version": "0.0.0",
+  "description": "A nodejs module that generating bpg image files by using libbpg (http://bellard.org/bpg/).",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thammin/node-bpg.git"
+  },
+  "keywords": [
+    "bpg",
+    "node-bpg"
+  ],
+  "author": "Paul Young",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thammin/node-bpg/issues"
+  },
+  "homepage": "https://github.com/thammin/node-bpg",
+  "devDependencies": {
+    "mocha": "^2.0.1"
+  }
+}

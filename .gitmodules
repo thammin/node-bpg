@@ -1,0 +1,3 @@
+[submodule "libbpg"]
+	path = libbpg
+	url = https://github.com/thomas-huet/libbpg.git
