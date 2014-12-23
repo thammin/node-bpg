@@ -7,7 +7,7 @@ var outputPath = 'test/fixture/output/';
 describe('bpg encoder without optional config', function() {
   var bpg = require('../index.js')();
 
-  it('generate bpg image from JPEG', function() {
+  it('generate bpg image from JPEG', function(done) {
     glob('test/fixture/input/*.jpg', {}, function(err, files) {
       if (err) throw err;
 
@@ -19,12 +19,12 @@ describe('bpg encoder without optional config', function() {
         });
       }, function(err) {
         if (err) throw err;
-        console.log('All files have been processed successfully');
+        done();
       });
     });
   });
 
-  it('generate bpg image from PNG', function() {
+  it('generate bpg image from PNG', function(done) {
     glob('test/fixture/input/*.png', {}, function(err, files) {
       if (err) throw err;
 
@@ -36,7 +36,7 @@ describe('bpg encoder without optional config', function() {
         });
       }, function(err) {
         if (err) throw err;
-        console.log('All files have been processed successfully');
+        done();
       });
     });
   });
@@ -50,7 +50,7 @@ describe('bpg encoder with optional config', function() {
   };
   var bpg = require('../index.js')(config);
 
-  it('generate bpg image from JPEG', function() {
+  it('generate bpg image from JPEG', function(done) {
     glob('test/fixture/input/*.jpg', {}, function(err, files) {
       if (err) throw err;
 
@@ -62,12 +62,12 @@ describe('bpg encoder with optional config', function() {
         });
       }, function(err) {
         if (err) throw err;
-        console.log('All files have been processed successfully');
+        done();
       });
     });
   });
 
-  it('generate bpg image from PNG', function() {
+  it('generate bpg image from PNG', function(done) {
     glob('test/fixture/input/*.png', {}, function(err, files) {
       if (err) throw err;
 
@@ -79,7 +79,7 @@ describe('bpg encoder with optional config', function() {
         });
       }, function(err) {
         if (err) throw err;
-        console.log('All files have been processed successfully');
+        done();
       });
     });
   });
