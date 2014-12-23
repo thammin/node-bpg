@@ -26,9 +26,21 @@ var config = {
 };
 var bpg = require('node-bpg')(config);
 
-bpg.encode('./input.jpg', function(err) {
+var inputName = './input.jpg';
+var outputName = './output.bpg';
+
+// with output name
+bpg.encode(inputName, outputName, function(err) {
   if (err) throw err;
+  console.log(inputName + ' -> ' + outputName);
 });
+
+// without output name (input.bpg)
+bpg.encode(inputName, function(err) {
+  if (err) throw err;
+  console.log(inputName + ' -> input.bpg');
+});
+
 ```
 
 
