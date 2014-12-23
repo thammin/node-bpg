@@ -1,0 +1,15 @@
+{
+  "qp": 28,
+  "cfmt": 420,
+  "color_space": "ycbcr",
+  "bit_depth": 8,
+  "lossless": false,
+  "encoder": "jctvc",
+  "level": 8,
+  "alphaq": 28,
+  "premul": false,
+  "limitedrange": false,
+  "hash": false,
+  "keepmetadata": false,
+  "verbose": false
+}
