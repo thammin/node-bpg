@@ -2,6 +2,7 @@
 
 > A nodejs wrapper that generating bpg image files by using pre-compiled libbpg (http://bellard.org/bpg/).
 
+* This wrapper is still under development ..slowly, PR would be appreciated!
 
 ## Install
 
