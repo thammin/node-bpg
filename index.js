@@ -1,5 +1,6 @@
 'use strict';
 var spawn = require('child_process').spawn;
+var path = require('path');
 
 module.exports = function(options) {
 
@@ -52,7 +53,7 @@ module.exports = function(options) {
       Array.prototype.push.apply(args, getArgs(outputFilePath));
     }
 
-    var child = spawn('./libbpg/bpgenc', args);
+    var child = spawn(path.resolve(__dirname, 'libbpg/bpgenc'), args);
     child.on('exit', function(code) {
       if (code !== 0) {
         callback(new Error('Process bpgenc exited with non-zero code'));
