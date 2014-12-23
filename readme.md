@@ -36,7 +36,7 @@ bpg.encode(inputName, outputName, function(err) {
 });
 
 // without output name (input.bpg)
-bpg.encode(inputName, function(err) {
+bpg.encode(inputName, null, function(err) {
   if (err) throw err;
   console.log(inputName + ' -> input.bpg');
 });
