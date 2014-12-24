@@ -1,4 +1,13 @@
+# npm
 **/npm-debug.log
 node_modules
 
+# test
 test/fixture/output
+
+# compiled
+libbpg/bpgenc
+libbpg/bpgdec
+libbpg/**/*.a
+libbpg/**/*.d
+libbpg/**/*.o
