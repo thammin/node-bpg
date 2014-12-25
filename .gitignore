@@ -2,9 +2,6 @@
 **/npm-debug.log
 node_modules
 
-# test
-test/fixture/output
-
 # compiled
 libbpg/bpgenc
 libbpg/bpgdec
