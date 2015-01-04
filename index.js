@@ -2,6 +2,10 @@
 var spawn = require('child_process').spawn;
 var path = require('path');
 
+// set EventEmitters to unlimited
+process.stdout.setMaxListeners(Infinity);
+process.stderr.setMaxListeners(Infinity);
+
 module.exports = function(options) {
 
   var optionFlags = {
@@ -62,9 +66,33 @@ module.exports = function(options) {
       }
     });
 
-    // set EventEmitters to unlimited
-    process.stdout.setMaxListeners(Infinity);
-    process.stderr.setMaxListeners(Infinity);
+    child.stdout.pipe(process.stdout);
+    child.stderr.pipe(process.stderr);
+  }
+
+  function decode(inputFilePath, outputFilePath, callback) {
+    var args = [];
+
+    if (!inputFilePath) {
+      callback(new Error('Invalid input filepath'));
+    } else {
+      args.push(inputFilePath);
+    }
+
+    if (!outputFilePath) {
+      Array.prototype.push.apply(args, ['-o', inputFilePath.replace(/\.bpg$/i, '.png')]);
+    } else {
+      Array.prototype.push.apply(args, ['-o', outputFilePath.replace(/\.bpg$/i, '.png')]);
+    }
+
+    var child = spawn(path.resolve(__dirname, 'libbpg/bpgdec'), args);
+    child.on('exit', function(code) {
+      if (code !== 0) {
+        callback(new Error('Process bpgdec exited with non-zero code'));
+      } else {
+        callback();
+      }
+    });
 
     child.stdout.pipe(process.stdout);
     child.stderr.pipe(process.stderr);
@@ -72,6 +100,6 @@ module.exports = function(options) {
 
   return {
     encode: encode,
-    decode: null
+    decode: decode
   };
 };
