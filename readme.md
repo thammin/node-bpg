@@ -6,6 +6,8 @@ For more information about libbpg, please visit (http://bellard.org/bpg/).
 
 ## Install
 
+Require: `node >=6`
+
 ```
 npm install --save node-bpg
 ```
