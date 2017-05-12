@@ -1,51 +1,49 @@
 # node-bpg
 
-> A nodejs wrapper that generating bpg image files by using pre-compiled libbpg (http://bellard.org/bpg/).
+> A nodejs wrapper that generating bpg image files by using [pre-compiled libbpg binary](https://github.com/thammin/libbpg-bin).
 
-* This wrapper is still under development ..slowly, PR would be appreciated!
+For more information about libbpg, please visit (http://bellard.org/bpg/).
 
 ## Install
 
-Install with [npm](https://npmjs.org/package/gulp-react)
-
 ```
-npm install --save-dev node-bpg
+npm install --save node-bpg
 ```
 
 
 ## Example
 
-###use with gulp plugin
-coming soon..
-
-###use with optional config
+### encode `.jpg` or `.png` to `.bpg`
 ```js
-var config = {
+const { encode } = require('node-bpg');
+const option = {
   qp: 10, // set quantizer parameter
   level: 9 // select the compression level
 };
-var bpg = require('node-bpg')(config);
 
-var inputName = './input.jpg';
-var outputName = './output.bpg';
+encode('input.jpg', 'output.bpg', option)
+  .then(() => {
+    // done
+  });
+```
 
-// with output name
-bpg.encode(inputName, outputName, function(err) {
-  if (err) throw err;
-  console.log(inputName + ' -> ' + outputName);
-});
+### decode `.bpg` to `.png` or `.ppm`
+```js
+const { decode } = require('node-bpg');
+const option = {
+  bit_depth: 16 // set bit_depth per component (PNG output only)
+};
 
-// without output name (input.bpg)
-bpg.encode(inputName, null, function(err) {
-  if (err) throw err;
-  console.log(inputName + ' -> input.bpg');
-});
-
+decode('input.bpg', 'output.png', option)
+  .then(() => {
+    // done
+  });
 ```
 
 
 ## Options
 
+### encode options
 ```
 qp                set quantizer parameter (smaller gives better quality, range: 0-51, default = 28)
 cfmt              set the preferred chroma format (420, 422, 444, default = 420)
@@ -65,6 +63,11 @@ verbose           show debug messages
 ```
 or refer to [default option](https://github.com/thammin/node-bpg/blob/master/config.json).
 
+### decode options
+```
+bit_depth         PNG output only: use bit_depth per component (8 or 16, default = 8)
+information       display information about the image
+```
 
 ## Test
 
