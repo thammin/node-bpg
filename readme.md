@@ -61,7 +61,7 @@ hash              include MD5 hash in HEVC bitstream
 keepmetadata      keep the metadata (from JPEG: EXIF, ICC profile, XMP, from PNG: ICC profile)
 verbose           show debug messages
 ```
-or refer to [default option](https://github.com/thammin/node-bpg/blob/master/config.json).
+or refer to [default option](https://github.com/thammin/node-bpg/blob/master/encodeDefault.json).
 
 ### decode options
 ```
